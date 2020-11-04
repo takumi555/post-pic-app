@@ -20,4 +20,14 @@ require("channels")
 //= require popper
 //= require bootstrap-sprockets
 
+import $ from 'jquery'
+import axios from 'axios'
 
+
+
+document.addEventListener('turbolinks:load', () => {
+  
+  $('.user-icon').on('click', () => {
+  
+  })
+})
