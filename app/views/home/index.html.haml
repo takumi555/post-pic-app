@@ -1,0 +1,9 @@
+.container
+  .user_name
+    = current_user.username
+  %br
+  .user-icon
+    - if current_user&.avatar&.attached?
+      = image_tag(current_user.avatar)
+    - else
+      = image_tag 'f_f_object_105_s512_f_object_105_1bg.png'
