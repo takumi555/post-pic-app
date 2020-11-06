@@ -1,0 +1,14 @@
+.container
+  = form_with model: @post do |f|
+    .post-user-icon
+      = image_tag 'f_f_object_105_s512_f_object_105_1bg.png'
+    .post-username
+      %p= current_user.username
+    %div 
+      = f.text_field :content, placeholder: "What's on your mind ?", class: 'post_content_form'
+    %div 
+      = f.label :pictures, "+ Album", class: 'picture_input_btn' do
+        %i.picture_form_name + Album
+        = f.file_field :pictures, multiple: true, class: 'picture_form'
+    %div 
+    = f.submit 'POST', class: ' post-submit'
