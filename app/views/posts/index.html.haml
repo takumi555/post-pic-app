@@ -1,0 +1,10 @@
+.container 
+  %div.post
+    - @posts.each do |post|
+      .post.content
+        = post.content
+      - post.pictures.each do |picture|
+        .post-picture
+          = image_tag picture
+
+      
