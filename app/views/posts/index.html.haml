@@ -21,7 +21,14 @@
         .twitter
         %a.twitter-share-button{"data-show-count" => "false", :href => "https://twitter.com/share?ref_src=twsrc%5Etfw"} Tweet
         %script{:async => "", :charset => "utf-8", :src => "https://platform.twitter.com/widgets.js"}
+        .comments
+          = link_to 'コメントする', post_comments_path(post_id: post.id)
+        .delete
+          = link_to '削除する', post_path(id: post.id), data: {method: 'delete', confirm: '本当に削除してもよろしいですか'}
+        
 
 
 
   = link_to 'POST', new_post_path
+
+  = javascript_pack_tag 'post'
