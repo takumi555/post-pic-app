@@ -1,7 +1,7 @@
 .container 
   .post
     - @posts.each do |post|
-      .post
+      .post#post-show{data: {post_id: post.id}}
         .timeline-user-icon
           = image_tag 'f_f_object_105_s512_f_object_105_1bg.png'
         .post-user
@@ -13,6 +13,11 @@
             = image_tag picture
         .post-content
           = post.content
+        - if user_signed_in?
+          .article_heart.hidden.active-heart
+            = image_tag 'heart-active.svg'
+          .article_heart.hidden.inactive-heart
+            = image_tag 'heart.svg'
         .twitter
         %a.twitter-share-button{"data-show-count" => "false", :href => "https://twitter.com/share?ref_src=twsrc%5Etfw"} Tweet
         %script{:async => "", :charset => "utf-8", :src => "https://platform.twitter.com/widgets.js"}
