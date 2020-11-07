@@ -5,5 +5,6 @@ class Post < ApplicationRecord
 
   has_many_attached :pictures
 
-  belongs_to :user 
+  belongs_to :user
+  has_many :likes, dependent: :destroy
 end
