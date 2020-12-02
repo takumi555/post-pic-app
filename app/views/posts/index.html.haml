@@ -13,31 +13,31 @@
             = image_tag picture
         .post-content
           = post.content
-        - if user_signed_in?
-          - if current_user.hasliked?(post)
-            .article_heart.active-heart{class: "#{post.id}", id: "#{post.id}"}
-              = image_tag 'heart-active.svg'
-            .article_heart.hidden.inactive-heart{class: "#{post.id}", id: "#{post.id}"}
-              = image_tag 'heart.svg'
-          - else
-            .article_heart.inactive-heart{class: "#{post.id}", id: "#{post.id}"}
-              = image_tag 'heart.svg'
-            .article_heart.hidden.active-heart{class: "#{post.id}", id: "#{post.id}"}
-              = image_tag 'heart-active.svg'
-          .like_count{class: "#{post.id}"}
-            = post.likes.count
-        .twitter
-        %a.twitter-share-button{"data-show-count" => "false", :href => "https://twitter.com/share?ref_src=twsrc%5Etfw"} Tweet
-        %script{:async => "", :charset => "utf-8", :src => "https://platform.twitter.com/widgets.js"}
-        .comments
-          = link_to 'コメントする', post_comments_path(post_id: post.id)
-        .delete
-          = link_to '削除する', post_path(id: post.id), data: {method: 'delete', confirm: '本当に削除してもよろしいですか'}
-          
+        
+        .icon-container 
+          .like
+          - if user_signed_in?
+            - if current_user.hasliked?(post)
+              .article_heart.active-heart{class: "#{post.id}", id: "#{post.id}"}
+                = image_tag 'heart-active.svg'
+              .article_heart.hidden.inactive-heart{class: "#{post.id}", id: "#{post.id}"}
+                = image_tag 'heart.svg'
+            - else
+              .article_heart.inactive-heart{class: "#{post.id}", id: "#{post.id}"}
+                = image_tag 'heart.svg'
+              .article_heart.hidden.active-heart{class: "#{post.id}", id: "#{post.id}"}
+                = image_tag 'heart-active.svg'
+          .comments
+            = link_to image_tag('吹き出しのアイコン15.png'), post_path(id: post.id), class: 'comment-button'
+          .share
+            = link_to image_tag('シェア.png'), "https://twitter.com/share?url=#{request.url}",title: 'Twitter', target: '_blank', class: 'share-button'
+          .delete
+            = link_to image_tag('ゴミ箱.png'), post_path(id: post.id), data: {method: 'delete', confirm: '本当に削除してもよろしいですか'}, class: 'delete-button'
+            
 
 
 
-  = link_to 'POST', new_post_path
+  = link_to image_tag('プラスマーク.png'), new_post_path, class: 'new_post_icon'
   %br
   = link_to 'ログアウト', destroy_user_session_path, data: { method: 'delete' }
 

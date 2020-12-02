@@ -110,9 +110,11 @@
 
 }
 .post-picture img{
-  width: 50px;
-  height: 50px;
-
+  width: 90%;
+  margin: 0 auto;
+  display: block;
+  border-radius: 5px;
+  
 }
 .post-content {
   font-family: Poppins;
@@ -127,8 +129,8 @@
 
 }
 .timeline-user-icon img{
-  width: 25px;
-  height: 25px;
+  width: 35px;
+  height: 35px;
   border-radius: 99px;
   display: block;
   float: left;
@@ -137,4 +139,44 @@
 
 .hidden {
   display: none;
+}
+.article_heart img{
+  width: 25px;
+  
+
+}
+.comment-button img {
+  width: 25px;
+  margin-left: 25px;
+  
+  
+}
+.share-button img {
+  width: 25px;
+  margin-left: 25px;
+}
+.delete-button img {
+  width: 25px;
+  margin-left: 25px;
+ 
+}
+
+.icon-container {
+  display: flex;
+  
+}
+
+.new_post_icon img{
+  background-color: white;
+  width: 80px;
+  position: fixed;
+  bottom: 30px;
+  right: 20px;
+  border-radius: 100px;
+}
+
+.comments-container {
+  background-color: lightgray;
+  border-radius: 10px;
+  padding: 0 10px;
 }

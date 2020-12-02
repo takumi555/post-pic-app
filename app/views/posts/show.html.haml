@@ -1,0 +1,8 @@
+.container
+  %h4 Comment
+  %p コメント一覧
+  .comments-container
+    - @comments.each do |comment|
+      .article.comment
+        %p= comment.content
+  = link_to 'コメント投稿', new_post_comment_path(@post.id), class: 'btn btn-danger'
