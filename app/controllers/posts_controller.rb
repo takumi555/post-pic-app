@@ -5,6 +5,8 @@ class PostsController < ApplicationController
   end
 
   def show
+    @post = Post.find(params[:id])
+    @comments = @post.comments
   end
 
   def new
@@ -28,6 +30,9 @@ class PostsController < ApplicationController
   end
 
   def destroy
+    post = current_user.posts.find(params[:id])
+    post.destroy!
+    redirect_to posts_path, notice: '削除に成功しました'
   end
 
   private
