@@ -36,6 +36,7 @@ gem 'active_decorator'
 gem 'carrierwave'
 gem 'rmagick'
 gem 'pry-rails'
+gem 'sidekiq'
 
 
 # Reduces boot times through caching; required in config/boot.rb

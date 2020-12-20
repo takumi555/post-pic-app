@@ -1,7 +1,9 @@
 .container
+  .comment_page_header
+    .back_icon
+      = link_to image_tag('矢印.png'), :back
+    %p.comment-page-title Comment
   .comment#post-show{data:{post_id: @post.id}}
-    %h4 Comment
-    %p コメント一覧
     .comments-container
     
   .comment-set
@@ -10,7 +12,8 @@
     .btn-secondary.btn.w-100.add-comment-btn
       COMMENT
 
-
+%br
+%br
         
 
   = javascript_pack_tag 'post'
