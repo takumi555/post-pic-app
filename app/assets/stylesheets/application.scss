@@ -1,5 +1,9 @@
 @import 'form';
 @import 'post';
+@import 'account';
+@import 'pictures';
+@import 'profile';
+@import 'comment';
 
 p{
 
@@ -14,18 +18,25 @@ label {
   width: 95%;
 }
 
-.user_name {
-  text-align: center;
+.footer-container {
+  position: absolute;
+  bottom: 0;
+  position: fixed;
+  background-color: white;
+  width: 100%;
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-between; 
+
+}
+.footer-icon img{
+  width: 30px;
+  
 }
 
-.user-icon img{
-  width: 76px;
-  height: 76px;
-  border-radius: 99px;
-  margin: 0 auto;
-  display: block;
-
+.wrapper {
+  min-height: 120vh;
+  position: relative;
 }
-
 
 @import 'bootstrap';

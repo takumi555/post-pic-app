@@ -128,12 +128,13 @@
   color: #333333;
 
 }
-.timeline-user-icon img{
+.timeline-user-icon{
   width: 35px;
   height: 35px;
   border-radius: 99px;
   display: block;
   float: left;
+  margin-left: -18px;
 
 }
 
@@ -168,11 +169,11 @@
 
 .new_post_icon img{
   background-color: white;
-  width: 80px;
+  width: 50px;
   position: fixed;
   bottom: 30px;
   right: 20px;
-  border-radius: 100px;
+  border-radius: 50%;
 }
 
 .comments-container {
@@ -180,3 +181,12 @@
   border-radius: 10px;
   padding: 0 10px;
 }
+
+.app-title {
+  text-decoration: none;
+
+}
+.loginout {
+  float: right;
+}
+
