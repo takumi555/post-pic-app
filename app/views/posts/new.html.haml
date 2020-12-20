@@ -7,8 +7,8 @@
     %div 
       = f.text_field :content, placeholder: "What's on your mind ?", class: 'post_content_form'
     %div 
-      = f.label :pictures, "+ Album", class: 'picture_input_btn' do
+      = f.label :pictures, "+ Album", class: 'picture_input_btn w-100' do
         %i.picture_form_name + Album
         = f.file_field :pictures, multiple: true, class: 'picture_form'
     %div 
-    = f.submit 'POST', class: ' post-submit'
+    = f.submit 'POST', class: 'btn btn-secondary w-100 mt-4' 

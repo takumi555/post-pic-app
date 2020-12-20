@@ -3,7 +3,35 @@
     = current_user.username
   %br
   .user-icon
-    = image_tag 'f_f_object_105_s512_f_object_105_1bg.png'
+    - if current_user.userimage.attached?
+      = image_tag current_user.userimage
+    - else 
+      = image_tag 'f_f_object_105_s512_f_object_105_1bg.png'
 
-  %p.btn.btn-danger follow
-      
+  .image-upload
+    = form_with(model: @profile_build, url: profile_path, method: 'patch', local: true) do |f|
+      = f.file_field :userimage
+      %br
+      = f.submit '保存', class: 'btn btn-outline-secondary btn-avatar-submit'
+
+  .account_status
+    .post_count
+      .figure-1
+        %p= current_user.posts.count
+      %p.status-text Posts
+    .following_count
+      = link_to account_followings_path(current_user.id) do
+        .figure-2
+          %p= current_user.following_count
+        %p.status-text following
+    .follower_count
+      = link_to account_followers_path(current_user.id) do
+        .figure-3
+          %p= current_user.follower_count
+        %p.status-text Followers
+
+  .img-container-top
+    - current_user.posts.each do |post|
+      - post.pictures.each do |picture|
+        .img-container
+          = image_tag picture, class: 'box'

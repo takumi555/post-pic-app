@@ -1,8 +1,16 @@
 .container
-  %h4 Comment
-  %p コメント一覧
-  .comments-container
-    - @comments.each do |comment|
-      .article.comment
-        %p= comment.content
-  = link_to 'コメント投稿', new_post_comment_path(@post.id), class: 'btn btn-danger'
+  .comment#post-show{data:{post_id: @post.id}}
+    %h4 Comment
+    %p コメント一覧
+    .comments-container
+    
+  .comment-set
+    .comment-text-area
+      = text_area_tag :comment_content, '', class: 'sm w-100',size: '1x1'
+    .btn-secondary.btn.w-100.add-comment-btn
+      COMMENT
+
+
+        
+
+  = javascript_pack_tag 'post'
